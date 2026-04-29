@@ -1,0 +1,25 @@
+<script>
+    // Ads show korar function
+    function startAutoAdsLoop() {
+        console.log("Auto Ads Loop Started...");
+
+        setInterval(function() {
+            // ১. Ads open kora (Apnar Ad link ekhane hobe)
+            let adWindow = window.open('https://your-ad-link.com', '_blank');
+
+            console.log("Ad Opened!");
+
+            // ২. ৫ second por auto kete dewa (Browser security-r upor nirbhor kore)
+            setTimeout(function() {
+                if (adWindow) {
+                    adWindow.close();
+                    console.log("Ad Closed!");
+                }
+            }, 5000); // ৫ second por kete jabe
+
+        }, 15000); // Protis ১৫ second por por loop cholbe
+    }
+
+    // Dashboard load holei auto ads shuru hobe
+    window.onload = startAutoAdsLoop;
+</script>
